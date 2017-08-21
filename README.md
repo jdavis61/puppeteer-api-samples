@@ -1,7 +1,5 @@
 # puppeteer-api-samples
-An example of ES6 page objects using the new puppeteer framework from google chrome. The test runner is tape. The application under test is a forked copy of tourdedave's "the-internet" project which contains numerous examples of hard to automate pages. 
-
-This project was created to serve as a reference to others interested in ES6 puppeteer tests.
+This repo contains sample ES6 page objects using the goggle chrome [puppeteer](https://github.com/GoogleChrome/puppeteer) library. The test runner is [tape](https://github.com/substack/tape). The application under test is a forked copy of [tourdedave's "the-internet"](https://github.com/tourdedave/the-internet) project which contains numerous examples of hard to automate pages. 
 
 # Dependencies
 * Ruby -- Needed to run the "the-internet" project locally.
@@ -16,4 +14,4 @@ rackup
 ```
 
 # Test execution
-To run the tests, clone the latest version of this repo and do an npm install. Then execute ```npm run test```.
+To run the tests, clone the latest version of this repo and do an npm install. Then execute ```npm test```.
