@@ -36,8 +36,7 @@ test('Login', async (t) => {
         await loginPage.enterPassword('SuperSecretPassword!');
         await page.screenshot({ path: 'screenshot1.png' });
 
-        const selector = 'div.example h2';
-        const loginButton = await page.evaluate((selector) => document.querySelector(selector), selector);
+        const loginButton = await page.evaluate(() => document.querySelector('div.example h2'));
         console.log(loginButton.textContent);
 
         await loginPage.submitLoginForm();
@@ -54,8 +53,6 @@ test('Login', async (t) => {
         console.error(err);
         t.end();
     }
-
-
 });
 
 test('Teardown', async (t) => {

@@ -4,11 +4,17 @@
   "description": "An example of ES6 page objects using the new puppeteer framework from google chrome",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node src/tests/loginTest.js",
-    "lint": "eslint src",
+    "test": "babel-node src/index.js",
+    "lint": "eslint --fix src",
     "build": "babel src --out-dir lib",
-    "testlocal": "npm run lint && npm run build && node lib/tests/*.js"
+    "runcompiledtest": "node lib/index.js",
+    "testlocal": "npm run lint && npm run build && node lib/index.js"
   },
+  "pre-commit": [
+    "lint",
+    "build",
+    "runcompiledtest"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jdavis61/puppeteer-api-samples.git"

@@ -25,7 +25,6 @@ test('Login', async (t) => {
         console.error(err);
         t.end();
     }
-
 });
 
 test('Teardown', async (t) => {

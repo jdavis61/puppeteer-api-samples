@@ -1,5 +1,3 @@
-"use strict";
-
 import BasePage from './BasePage';
 
 class Login extends BasePage {
