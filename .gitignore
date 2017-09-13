@@ -1,2 +1,6 @@
 node_modules
 *.png
+.idea
+npm-debug.log
+trace.json
+lib

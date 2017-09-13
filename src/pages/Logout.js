@@ -1,12 +1,8 @@
-"use strict";
+
 
 import BasePage from './BasePage';
 
 class Logout extends BasePage {
-
-    constructor(page) {
-        super(page);
-    }
 
     async logout() {
         await this.page.click('#content > div > a');
