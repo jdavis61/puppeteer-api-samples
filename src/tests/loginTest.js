@@ -13,15 +13,6 @@ test('Setup', async (t) => {
     browser = await puppeteer.launch({ headless: false });
     page = await browser.newPage();
 
-    await page.on('request', (r) => {
-        console.error((r.postData === undefined) ? '' : `IM SOMETHING ${r.postData}`);
-    });
-
-
-    await page.on('response', (r) => {
-        console.error(r.url);
-    });
-
     loginPage = new Login(page);
     logoutPage = new Logout(page);
     t.end();
@@ -29,30 +20,25 @@ test('Setup', async (t) => {
 
 test('Login', async (t) => {
     console.log('2');
-    try {
-        await loginPage.gotoPage();
+    await loginPage.gotoPage();
 
-        await loginPage.enterUsername('tomsmith');
-        await loginPage.enterPassword('SuperSecretPassword!');
-        await page.screenshot({ path: 'screenshot1.png' });
+    await loginPage.enterUsername('tomsmith');
+    await loginPage.enterPassword('SuperSecretPassword!');
+    await page.screenshot({ path: 'screenshot1.png' });
 
-        const loginButton = await page.evaluate(() => document.querySelector('div.example h2'));
-        console.log(loginButton.textContent);
+    const loginButton = await page.evaluate(() => document.querySelector('div.example h2'));
+    console.log(loginButton.textContent);
 
-        await loginPage.submitLoginForm();
-        await page.screenshot({ path: 'screenshot2.png' });
+    await loginPage.submitLoginForm();
+    await page.screenshot({ path: 'screenshot2.png' });
 
-        await logoutPage.logout();
-        await page.screenshot({ path: 'screenshot3.png' });
+    await logoutPage.logout();
+    await page.screenshot({ path: 'screenshot3.png' });
 
-        await loginPage.enterUsername('codertest');
-        await page.screenshot({ path: 'screenshot4.png' });
-
-        t.end();
-    } catch (err) {
-        console.error(err);
-        t.end();
-    }
+    await loginPage.enterUsername('codertest');
+    await page.screenshot({ path: 'screenshot4.png' });
+    t.equal(1, 1);
+    t.end();
 });
 
 test('Teardown', async (t) => {

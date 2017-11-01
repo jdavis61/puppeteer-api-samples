@@ -20,6 +20,7 @@ test('Login', async (t) => {
         await loginPage.gotoPage();
         const header = await page.$('div.example h2');
         console.log(header.textContent);
+        t.equal(1, 1);
         t.end();
     } catch (err) {
         console.error(err);

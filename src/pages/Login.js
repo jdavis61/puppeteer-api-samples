@@ -7,13 +7,15 @@ class Login extends BasePage {
     }
 
     async enterUsername(username) {
-        await this.page.focus('input[name=\'username\']');
-        this.page.type(username);
+        const usernameSelector = 'input[name=\'username\']';
+        await this.page.focus(usernameSelector);
+        this.page.type(usernameSelector, username);
     }
 
     async enterPassword(password) {
-        await this.page.focus('input[name=\'password\']');
-        this.page.type(password);
+        const passwordSelector = 'input[name=\'password\']';
+        await this.page.focus(passwordSelector);
+        this.page.type(passwordSelector, password);
     }
 
     async submitLoginForm() {
