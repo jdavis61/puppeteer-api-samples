@@ -1,6 +1,11 @@
 node_modules
-*.png
-.idea
 npm-debug.log
+.DS_Store
+dist
+*.swp
+.yarnclean
+yarn-error.log
+.idea
+*.png
 trace.json
 lib
