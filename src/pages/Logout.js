@@ -1,5 +1,3 @@
-
-
 import BasePage from './BasePage';
 
 class Logout extends BasePage {
@@ -10,4 +8,5 @@ class Logout extends BasePage {
     }
 
 }
+
 module.exports = Logout;

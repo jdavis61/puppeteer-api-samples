@@ -1,12 +1,17 @@
 {
   "extends": "airbnb",
   "rules": {
-    "func-names": ["error", "never"],
+    "func-names": [
+      "error",
+      "never"
+    ],
     "class-methods-use-this": "off",
     "max-len": "off",
     "indent": 0
   },
-  "plugins": ["webdriverio"],
+  "plugins": [
+    "webdriverio"
+  ],
   "env": {
     "webdriverio/wdio": true,
     "mocha": true,

@@ -24,4 +24,5 @@ class Login extends BasePage {
     }
 
 }
+
 module.exports = Login;

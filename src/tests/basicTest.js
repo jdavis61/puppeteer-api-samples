@@ -8,7 +8,7 @@ let loginPage;
 
 test('Setup', async (t) => {
     console.log('1');
-    browser = await puppeteer.launch({ headless: false });
+    browser = await puppeteer.launch({headless: false});
     page = await browser.newPage();
     loginPage = new Login(page);
     t.end();

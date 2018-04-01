@@ -1,5 +1,3 @@
-
-
 class BasePage {
 
     constructor(page) {
@@ -18,7 +16,8 @@ class BasePage {
             returnText = await page.evaluate(h3Selector).textContent;
         }
         return returnText;
-}
+    }
 
 }
+
 module.exports = BasePage;

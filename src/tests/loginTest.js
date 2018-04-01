@@ -10,7 +10,7 @@ let logoutPage;
 
 test('Setup', async (t) => {
     console.log('1');
-    browser = await puppeteer.launch({ headless: false });
+    browser = await puppeteer.launch({headless: false});
     page = await browser.newPage();
 
     loginPage = new Login(page);
@@ -24,19 +24,19 @@ test('Login', async (t) => {
 
     await loginPage.enterUsername('tomsmith');
     await loginPage.enterPassword('SuperSecretPassword!');
-    await page.screenshot({ path: 'screenshot1.png' });
+    await page.screenshot({path: 'screenshot1.png'});
 
     const loginButton = await page.evaluate(() => document.querySelector('div.example h2'));
     console.log(loginButton.textContent);
 
     await loginPage.submitLoginForm();
-    await page.screenshot({ path: 'screenshot2.png' });
+    await page.screenshot({path: 'screenshot2.png'});
 
     await logoutPage.logout();
-    await page.screenshot({ path: 'screenshot3.png' });
+    await page.screenshot({path: 'screenshot3.png'});
 
     await loginPage.enterUsername('codertest');
-    await page.screenshot({ path: 'screenshot4.png' });
+    await page.screenshot({path: 'screenshot4.png'});
     t.equal(1, 1);
     t.end();
 });
