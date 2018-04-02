@@ -1,4 +1,6 @@
-class BasePage {
+export class BasePage {
+
+    public page = null;
 
     constructor(page) {
         this.page = page;
@@ -21,5 +23,3 @@ class BasePage {
     }
 
 }
-
-module.exports = BasePage;

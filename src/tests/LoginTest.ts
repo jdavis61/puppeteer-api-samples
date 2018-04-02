@@ -1,7 +1,7 @@
-import puppeteer from 'puppeteer';
-import test from 'tape';
-import Login from '../pages/Login';
-import Logout from '../pages/Logout';
+import * as puppeteer from 'puppeteer';
+import * as test from 'tape';
+import {Login} from '../pages/Login';
+import {Logout} from '../pages/Logout';
 
 let browser;
 let page;
@@ -47,3 +47,5 @@ test('Teardown', async (assert) => {
     assert.end();
 });
 
+// "tslint": "^5.8.0",
+//     "typescript": "^2.5.3"

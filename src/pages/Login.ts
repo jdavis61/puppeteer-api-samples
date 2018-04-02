@@ -1,6 +1,6 @@
-import BasePage from './BasePage';
+import {BasePage} from './BasePage';
 
-class Login extends BasePage {
+export class Login extends BasePage {
 
     async gotoPage() {
         await this.page.goto('http://the-internet.herokuapp.com/login');
@@ -29,5 +29,3 @@ class Login extends BasePage {
     }
 
 }
-
-module.exports = Login;

@@ -1,6 +1,6 @@
-import puppeteer from 'puppeteer';
-import test from 'tape';
-import Login from '../pages/Login';
+import * as puppeteer from 'puppeteer';
+import * as test from 'tape';
+import {Login} from '../pages/Login';
 
 // https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4
 
