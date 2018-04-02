@@ -1,6 +1,6 @@
+export class BasePage {
 
-
-class BasePage {
+    public page = null;
 
     constructor(page) {
         this.page = page;
@@ -11,14 +11,15 @@ class BasePage {
         const h2Selector = 'document.querySelector("div.example h2");';
         const h3Selector = 'document.querySelector("div.example h3");';
         let returnText;
+
         try {
-            returnText = await page.evaluate(h2Selector).textContent;
+            returnText = await this.page.evaluate(h2Selector).textContent;
         } catch (err) {
             // assume h2 is not the page header
-            returnText = await page.evaluate(h3Selector).textContent;
+            returnText = await this.page.evaluate(h3Selector).textContent;
         }
+
         return returnText;
-}
+    }
 
 }
-module.exports = BasePage;

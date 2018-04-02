@@ -1,8 +1,6 @@
+import {BasePage} from './BasePage';
 
-
-import BasePage from './BasePage';
-
-class Logout extends BasePage {
+export class Logout extends BasePage {
 
     async logout() {
         await this.page.click('.radius > i');
@@ -10,4 +8,3 @@ class Logout extends BasePage {
     }
 
 }
-module.exports = Logout;

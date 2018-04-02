@@ -4,16 +4,15 @@
   "description": "An example of ES6 page objects using the new puppeteer framework from google chrome",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node src/index.js",
-    "lint": "eslint --fix src",
-    "build": "babel src --out-dir lib",
-    "runcompiledtest": "node lib/index.js",
-    "testlocal": "npm run lint && npm run build && node lib/index.js"
+    "remove": "rimraf lib",
+    "pretest": "npm run remove",
+    "test": "npm run lint && npm run build && npm run runcompiledtest",
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "runcompiledtest": "node lib/index.js"
   },
   "pre-commit": [
-    "lint",
-    "build",
-    "runcompiledtest"
+    "test"
   ],
   "repository": {
     "type": "git",
@@ -26,22 +25,13 @@
   },
   "homepage": "https://github.com/jdavis61/puppeteer-api-samples#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.25.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
-    "puppeteer": "latest",
-    "tape": "^4.8.0"
+    "puppeteer": "1.2.0",
+    "tape": "4.9.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
-    "eslint-plugin-webdriverio": "^1.0.1",
-    "pre-commit": "^1.2.2"
+    "@types/tape": "4.2.32",
+    "pre-commit": "1.2.2",
+    "tslint": "5.9.1",
+    "typescript": "2.8.1"
   }
 }
